@@ -47,3 +47,32 @@ do
 done
 	
 echo "Total Salary = $totalSalary" 
+
+echo " Calculate wage for month"
+read -p "Enter the number of working day =" numDay
+day=1
+empHrs=0
+
+#for (( day=1; day<=$numDay; day++ ))
+while [ $day -le 20 ] || [ $empHrs -le 100 ]
+do
+        employeeCheck=$(( 1 + RANDOM % 2 ))
+        case $employeeCheck in
+                $isFullTime)
+                        empName=FullTimeEmp
+                        empHrs=$(( $empHrs + 8 ))
+                ;;
+                $isPartTime)
+                        empName=PartTimeEmp
+                        empHrs=$(( $empHrs + 4 ))
+                ;;
+        esac
+
+        salary=$(( $empHrs * $wagePerHour ))
+        #echo "Salary of $empName on the $day is $salary"
+        totalSalary=$(( $totalSalary + $salary ))
+	((day++))
+done
+
+echo "Total Salary = $totalSalary"
+
