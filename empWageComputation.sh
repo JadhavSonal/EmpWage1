@@ -11,10 +11,15 @@ else
 	echo "Employee is Absent"
 fi
 
-echo "Calculate Daily employee Wages"
+echo "Calculate Daily employee Full Time Wages"
 wagePerHour=20
 hoursPerDay=8
 
 wagePerDay=$(( 20 * 8 ))
 
 echo "Daily Employee wages= $wagePerDay"
+
+echo "Calculate Employee Part time & Wages"
+partTimeHourPerday=4
+partTimeWage=$(( $wagePerHour * $partTimeHourPerday ))
+echo "Daily Employee Part time wages= $partTimeWage"
