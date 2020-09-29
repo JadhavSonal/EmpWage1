@@ -10,3 +10,11 @@ then
 else
 	echo "Employee is Absent"
 fi
+
+echo "Calculate Daily employee Wages"
+wagePerHour=20
+hoursPerDay=8
+
+wagePerDay=$(( 20 * 8 ))
+
+echo "Daily Employee wages= $wagePerDay"
