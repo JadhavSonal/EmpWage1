@@ -41,7 +41,7 @@ do
 		;;
 	esac
 
-	salary=$(( $empHrs * $WagePerHour ))
+	salary=$(( $empHrs * $wagePerHour ))
 	echo "Salary of $empName on the $day is $salary"
 	totalSalary=$(( $totalSalary + $salary ))
 done
