@@ -8,7 +8,7 @@ randomCheck=$(( 1 + RAMDOM % 2 ))
 if [ $isPresent -eq $randomCheck ]
 then
 	echo "Employee is Present"
-else
+lse
 	echo "Employee is Absent"
 fi
 
@@ -75,32 +75,4 @@ do
 done
 
 echo "Total Salary = $totalSalary"
-
-
-
-
-echo " Calculate wage for month"
-read -p "Enter the number of working day =" numDay
-numDay=20
-
-for (( day=1; day<=$numDay; day++ ))
-
-do
-        employeeCheck=$(( 1 + RANDOM % 2 ))
-        case $employeeCheck in
-                $isFullTime)
-                        empName=FullTimeEmp
-                        empHrs= 8 
-                ;;
-                $isPartTime)
-                        empName=PartTimeEmp
-                        empHrs= 4 
-                ;;
-        esac
-
-        salary=$(( $empHrs * $wagePerHour ))
-        #echo "Salary of $empName on the $day is $salary"
-        totalSalary=$(( $totalSalary + $salary ))
-done
-echo "total salary = $totalSalary"
 
