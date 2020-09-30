@@ -22,3 +22,6 @@ Dictionary[2]=$result2
 Dictionary[3]=$result3
 Dictionary[4]=$result4
 echo "Displaying all elements  present in disctionary:" ${Dictionary[@]}
+
+arr=($result1 $result2 $result3 $result4)
+echo "displaying all array elements: ${arr[@]} "
