@@ -12,3 +12,6 @@ echo "Result of ((a*b+c)) is = $result"
 
 result=$((c+a/b))
 echo "Result of ((c+a/b)) is = $result"
+
+result=$((a%b+c))
+echo "Result of ((a%b+c)) is = $result"
