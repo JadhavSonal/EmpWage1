@@ -53,7 +53,6 @@ read -p "Enter the number of working day =" numDay
 day=1
 empHrs=0
 
-#for (( day=1; day<=$numDay; day++ ))
 while [ $day -le 20 ] || [ $empHrs -le 100 ]
 do
         employeeCheck=$(( 1 + RANDOM % 2 ))
@@ -89,18 +88,47 @@ do
         employeeCheck=$(( 1 + RANDOM % 2 ))
         case $employeeCheck in
                 $isFullTime)
-                        empName=FullTimeEmp
+                        empName=FullTimeEmployee
                         empHrs= 8 
                 ;;
                 $isPartTime)
-                        empName=PartTimeEmp
+                        empName=PartTimeEmployee
                         empHrs= 4 
+                ;;
+        esac
+
+        salary=$(( $empHrs * $wagePerHour ))
+        echo "Salary of $empName on the $day is $salary"
+        totalSalary=$(( $totalSalary + $salary ))
+done
+echo "total salary = $totalSalary"
+
+getWorkingHour()
+{
+	day=$1
+	empHrs=$2 
+	while [ $day -le 20 ] || [ $empHrs -le 100 ]
+	do
+        	employeeCheck=$(( 1 + RANDOM % 2 ))
+        	case $employeeCheck in
+                $isFullTime)
+                        empName=FullTimeEmp
+                        empHrs=$(( $empHrs + 8 ))
+                ;;
+                $isPartTime)
+                        empName=PartTimeEmp
+                        empHrs=$(( $empHrs + 4 ))
                 ;;
         esac
 
         salary=$(( $empHrs * $wagePerHour ))
         #echo "Salary of $empName on the $day is $salary"
         totalSalary=$(( $totalSalary + $salary ))
+        ((day++))
 done
-echo "total salary = $totalSalary"
+}
+
+echo "Total Salary = $totalSalary"
+
+
 
