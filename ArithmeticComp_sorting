@@ -1,0 +1,4 @@
+#!/bin/bah -x
+
+echo "Enter the values of a b & c =" a b c
+result=`expr $a+ $(( $b * $c))`
