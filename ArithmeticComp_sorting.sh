@@ -1,3 +1,4 @@
+
 #!/bin/bash -x
 
 declare -A  Dictionary
@@ -13,7 +14,6 @@ echo "Result of ((a*b+c)) is = $result"
 
 result3=$((c+a/b))
 echo "Result of ((c+a/b)) is = $result"
-
 result4=$((a%b+c))
 echo "Result of ((a%b+c)) is = $result"
 
@@ -26,7 +26,7 @@ echo "Displaying all elements  present in disctionary:" ${Dictionary[@]}
 arr=($result1 $result2 $result3 $result4)
 echo "displaying all array elements: ${arr[@]} "
 
-echo "Sort results in Decending Order"
+echo "Sort results in ascending Order"
 for ((i=0; i<=4; i++))
 do
 	for ((j=0; j<=4-i-1; j++ ))
@@ -40,4 +40,5 @@ do
 	done
 done
 echo "sorted array:= ${arr[*]}"
+
 
